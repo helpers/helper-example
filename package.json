@@ -1,0 +1,41 @@
+{
+  "name": "helper-example",
+  "description": "Tempplate helper for easily adding code examples to a document.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jonschlinkert/helper-example",
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jonschlinkert/helper-example.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/helper-example/issues"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/jonschlinkert/helper-example/blob/master/LICENSE"
+  },
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "load-pkg": "^1.0.0"
+  },
+  "devDependencies": {
+    "get-value": "^1.0.0",
+    "handlebars": "^2.0.0",
+    "mocha": "*",
+    "should": "*",
+    "verb": "^0.5.0"
+  }
+}
