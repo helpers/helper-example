@@ -1,30 +1,23 @@
-/*!
- * helper-example <https://github.com/jonschlinkert/helper-example>
- *
- * Copyright (c) 2015, Jon Schlinkert.
- * Licensed under the MIT License.
- */
-
 'use strict';
 
-require('should');
-var handlebars = require('handlebars');
-var verb = require('verb');
+require('mocha');
+var fs = require('fs');
+var assert = require('assert');
 var helper = require('./');
+var example = require('./');
 
+function read(fp) {
+  return fs.readFileSync(fp, 'utf8');
+}
 
-describe('require helper', function () {
-  it('should work as a template helper with verb (or any template engine):', function () {
-    var str = 'AAA {%= require("get-value")({a: {b: {c: "ZZZ"}}}, "a.b.c") %}';
-    verb.helper('require', helper);
-    verb.render(str, function (err, content) {
-      content.should.equal('AAA ZZZ');
-    });
+describe('example helper', function() {
+  it('should expose a function', function() {
+    assert.equal(typeof example, 'function');
   });
 
-  it('should work as a handlebars helper:', function () {
-    var str = '{{require "get-value" this "a.b.c"}}';
-    handlebars.registerHelper('require', helper);
-    handlebars.compile(str)({a: {b: {c: 'ZZZ'}}}).should.equal('ZZZ');
+  it('should replace a relative path with the module name', function() {
+    var fixture = read('example.js');
+    var actual = example(fixture, 'helper-example');
+    assert(/require\(['"]helper-example/.test(actual));
   });
 });

@@ -1,23 +1,14 @@
 {
   "name": "helper-example",
-  "description": "Tempplate helper for easily adding code examples to a document.",
+  "description": "Opinionated template helper that inserts a code example from a filepath.",
   "version": "0.1.0",
   "homepage": "https://github.com/jonschlinkert/helper-example",
-  "author": {
-    "name": "Jon Schlinkert",
-    "url": "https://github.com/jonschlinkert"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/jonschlinkert/helper-example.git"
-  },
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "repository": "jonschlinkert/helper-example",
   "bugs": {
     "url": "https://github.com/jonschlinkert/helper-example/issues"
   },
-  "license": {
-    "type": "MIT",
-    "url": "https://github.com/jonschlinkert/helper-example/blob/master/LICENSE"
-  },
+  "license": "MIT",
   "files": [
     "index.js"
   ],
@@ -28,14 +19,41 @@
   "scripts": {
     "test": "mocha"
   },
-  "dependencies": {
-    "load-pkg": "^1.0.0"
-  },
   "devDependencies": {
-    "get-value": "^1.0.0",
-    "handlebars": "^2.0.0",
+    "gulp-format-md": "^0.1.7",
     "mocha": "*",
-    "should": "*",
-    "verb": "^0.5.0"
+    "should": "*"
+  },
+  "keywords": [
+    "example",
+    "helper"
+  ],
+  "verb": {
+    "run": true,
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "related": {
+      "list": [
+        "assemble",
+        "generate",
+        "templates",
+        "update",
+        "verb"
+      ]
+    },
+    "reflinks": [
+      "assemble",
+      "templates",
+      "verb"
+    ],
+    "lint": {
+      "reflinks": true
+    }
   }
 }
